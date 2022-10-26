@@ -5,8 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Product Page</title>
-	<!-- anybot abandoned cart Page --> 
-	<script>window.addEventListener("load",function(){!function(n,s){let o=new URLSearchParams(window.location.search);if(o.has("abu")&&0<o.get("abu").length){var b=o.get("abu");let a="",t=!1,e=!1;o.has("absn")&&0<o.get("absn").length&&(t=o.get("absn"),a+="&absn="+t,o.has("absk")&&0<o.get("absk").length&&(e=o.get("absk"),a+="&absk="+e),i=n.createElement("img"),i.async=!0,i.src="http://localhost:8000/api/v2/abandoncart?any_ac_token="+b+"&ec_from=1"+a,i.width=i.height=0,n.body.appendChild(i),s.setItem("any_ac_token_904",o.get("abu")),t&&s.setItem("absn_904",t),e&&s.setItem("absk_904",e))}}((location,document),localStorage)});</script>
+	<!-- anybot abandoned cart Page -->
+	<script>window.addEventListener("load",function(){!function(a,e){let t=new URLSearchParams(window.location.search);var n=t.get("abu"),o=t.get("absn"),s=t.get("absk");let c="";n&&o&&(e.setItem("any_ac_token_904",n),e.setItem("absn_904",o),c+="&absn="+o,s&&(e.setItem("absk_904",s),c+="&absk="+s),i=a.createElement("img"),i.async=!0,i.src="http://localhost:8000/api/v2/abandoncart?any_ac_token="+n+"&ec_from=1"+c,i.style="display:none",a.body.appendChild(i))}((location,document),localStorage)});</script>
 </head>
 <body>
 
