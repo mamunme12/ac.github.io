@@ -1,0 +1,40 @@
+<!-- anybot abandoned cart Page -->
+<script>
+	window.addEventListener("load", function () {
+		!(function (e, t, o) {
+			let any_param = new URLSearchParams(window.location.search);
+			if(any_param.has('abu') && any_param.get('abu').length > 0){
+				
+
+				let any_ac_token = any_param.get('abu');
+				let extra_prams = '';
+
+				if(any_param.has('absn') && any_param.get('absn').length > 0){
+					let absn = any_param.get('absn');
+					extra_prams += "&absn="+absn;
+				}else{
+					return;
+				}
+				if(any_param.has('absk') && any_param.get('absk').length > 0){
+					let absk = any_param.get('absk');
+					extra_prams += "&absk="+absk;
+				}
+
+				i = t.createElement("img");
+				(i.async = !0),
+				(i.src = "${get_v2_url()}api/v2/abandoncart?any_ac_token="+any_ac_token+"&ec_from=1"+extra_prams),
+				(i.width = i.height = 0),
+
+				t.body.appendChild(i);
+
+				o.setItem("any_ac_token_${$app.bot.id}", any_param.get('abu'));
+				if(absn){
+					o.setItem("absn_${$app.bot.id}", absn);
+				}
+				if(absk){
+					o.setItem("absk_${$app.bot.id}", absk);
+				}
+			}
+		})(location, document, localStorage);
+	});
+</script>
